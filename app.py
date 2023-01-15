@@ -22,15 +22,26 @@ except:
     os.execv(sys.executable, [sys.executable] + sys.argv)
 
 import configparser
-import openpyxl
+
+try:
+    import openpyxl
+except:
+    os.system('pip install openpyxl')
+    os.system('pip install --user xlsxwriter')
+    os.system('pip install xlrd==1.2.0')
+
+    os.execv(sys.executable, [sys.executable] + sys.argv)
 from threading import *
 from bs4 import BeautifulSoup
+
+import sqlite3
 
 try:
     import pandas as pd  # pip install pandas
 except:
     os.system('pip install pandas')
     os.execv(sys.executable, [sys.executable] + sys.argv)
+
 # Import PyQt5 Module
 from PyQt5 import QtCore, QtGui, QtWidgets, uic, QtNetwork
 from PyQt5.QtMultimedia import QMediaPlayer, QMediaContent
@@ -41,7 +52,7 @@ from PyQt5.QtNetwork import QNetworkAccessManager, QNetworkRequest
 from PyQt5.QtSql import QSqlDatabase, QSqlQuery
 from PyQt5.uic import loadUi
 from PyQt5.QtWidgets import *
-import sqlite3
+
 from PyQt5.QtWidgets import QDialog, QApplication, QFileDialog
 from PyQt5.QtCore import QDir, Qt, QUrl
 from PyQt5.QtWidgets import (QMainWindow, QWidget, QPushButton, QApplication,
@@ -1038,7 +1049,7 @@ class MainWindow(QMainWindow):
                                 # print()
                         countdown = soup.find('div', id="countdown").getText()
                         self.LIB_remining_Time.setText(countdown)
-                        print("countdown: ",countdown)
+                        print("countdown: ", countdown)
                         # countdown
                         # print(kel_priere)
                         heure_sys = datetime.datetime.now().strftime("%H:%M")
@@ -1064,7 +1075,6 @@ class MainWindow(QMainWindow):
                             # time to pray
                             self.LIB_DT_4.setText("حان وقت الاذان")
                             self.LIB_remining_Time.setText(heure_azan)
-                            self.timer.stop()
                             self.playAudioFile()
                     else:
                         print("Mode Offline")
@@ -1150,6 +1160,8 @@ class MainWindow(QMainWindow):
                                 if gb_heure_dhuhr == heure_actuel:
                                     if self.debug: print("c'est l'heure dhuhr")
                                     self.LIB_DT_4.setText("حان وقت الاذان")
+                                    self.LIB_remining_Time.setText(gb_heure_dhuhr)
+                                    self.LIB_DT_2.setText("Dhuhr")
                                     self.playAudioFile()
                                 else:
                                     bheure_dhuhr = parser.parse(gb_heure_dhuhr)
@@ -1171,6 +1183,8 @@ class MainWindow(QMainWindow):
                                 if gb_heure_asr == heure_actuel:
                                     print("c'est l'heure asr")
                                     self.LIB_DT_4.setText("حان وقت الاذان")
+                                    self.LIB_remining_Time.setText(gb_heure_asr)
+                                    self.LIB_DT_2.setText(Asr)
                                     self.playAudioFile()
                                 else:
                                     # calcul difference to asr
@@ -1192,6 +1206,8 @@ class MainWindow(QMainWindow):
                                 if gb_heure_maghrib == heure_actuel:
                                     if self.debug: print("c'est l'heure maghrib")
                                     self.LIB_DT_4.setText("حان وقت الاذان")
+                                    self.LIB_remining_Time.setText(gb_heure_maghrib)
+                                    self.LIB_DT_2.setText("Maghrib")
                                     self.playAudioFile()
                                 else:
                                     bheure_maghrib = parser.parse(gb_heure_maghrib)
@@ -1214,6 +1230,8 @@ class MainWindow(QMainWindow):
                                 if gb_heure_ishae == heure_actuel:
                                     if self.debug: print("c'est l'heure ishae")
                                     self.LIB_DT_4.setText("حان وقت الاذان")
+                                    self.LIB_remining_Time.setText(gb_heure_ishae)
+                                    self.LIB_DT_2.setText("Isha")
                                     self.playAudioFile()
                                 else:
                                     bheure_ishae = parser.parse(gb_heure_ishae)
@@ -1247,6 +1265,8 @@ class MainWindow(QMainWindow):
                                 if new_gb_heure_fajr == heure_actuel:
                                     if self.debug: print("c'est l'heure el fajr")
                                     self.LIB_DT_4.setText("حان وقت الاذان")
+                                    self.LIB_remining_Time.setText(new_gb_heure_fajr)
+                                    self.LIB_DT_2.setText("Fajr")
                                     self.playAudioFile()
                                 else:
                                     # calcul difference en heure entre les deux date
@@ -1344,6 +1364,8 @@ class MainWindow(QMainWindow):
                     if gb_heure_dhuhr == heure_actuel:
                         if self.debug: print("c'est l'heure dhuhr")
                         self.LIB_DT_4.setText("حان وقت الاذان")
+                        self.LIB_remining_Time.setText(gb_heure_dhuhr)
+                        self.LIB_DT_2.setText("Dhuhr")
                         self.playAudioFile()
                     else:
                         bheure_dhuhr = parser.parse(gb_heure_dhuhr)
@@ -1365,12 +1387,14 @@ class MainWindow(QMainWindow):
                     if gb_heure_asr == heure_actuel:
                         print("c'est l'heure asr")
                         self.LIB_DT_4.setText("حان وقت الاذان")
+                        self.LIB_remining_Time.setText(gb_heure_asr)
+                        self.LIB_DT_2.setText(Asr)
                         self.playAudioFile()
                     else:
                         # calcul difference to asr
                         bheure_asr = parser.parse(gb_heure_asr)
-                        lheure_asr   =bheure_asr.strftime("%H:%M:%S")
-                        print("Heure asr: ",lheure_asr)
+                        lheure_asr = bheure_asr.strftime("%H:%M:%S")
+                        print("Heure asr: ", lheure_asr)
                         time_diff = (parser.parse(lheure_asr) - parser.parse(lheure_actuel))
                         tsecs = time_diff.total_seconds()
                         tmins = tsecs / 60
@@ -1386,6 +1410,8 @@ class MainWindow(QMainWindow):
                     if gb_heure_maghrib == heure_actuel:
                         if self.debug: print("c'est l'heure maghrib")
                         self.LIB_DT_4.setText("حان وقت الاذان")
+                        self.LIB_remining_Time.setText(gb_heure_maghrib)
+                        self.LIB_DT_2.setText("Maghrib")
                         self.playAudioFile()
                     else:
                         bheure_maghrib = parser.parse(gb_heure_maghrib)
@@ -1408,6 +1434,8 @@ class MainWindow(QMainWindow):
                     if gb_heure_ishae == heure_actuel:
                         if self.debug: print("c'est l'heure ishae")
                         self.LIB_DT_4.setText("حان وقت الاذان")
+                        self.LIB_remining_Time.setText(gb_heure_ishae)
+                        self.LIB_DT_2.setText("Isha")
                         self.playAudioFile()
                     else:
                         bheure_ishae = parser.parse(gb_heure_ishae)
@@ -1441,6 +1469,8 @@ class MainWindow(QMainWindow):
                     if new_gb_heure_fajr == heure_actuel:
                         if self.debug: print("c'est l'heure el fajr")
                         self.LIB_DT_4.setText("حان وقت الاذان")
+                        self.LIB_remining_Time.setText(new_gb_heure_fajr)
+                        self.LIB_DT_2.setText("Fajr")
                         self.playAudioFile()
                     else:
                         # calcul difference en heure entre les deux date
@@ -1458,7 +1488,6 @@ class MainWindow(QMainWindow):
                             print(f"time_diff is {tmins} minutes.")
                             print(f"time_diff  is {thrs} hours .")
 
-
     def mediastate_changed(self, state):
         if self.player.state() == QMediaPlayer.PlayingState:
             # self.playBtn.setIcon(
@@ -1466,10 +1495,13 @@ class MainWindow(QMainWindow):
             #
             # )
             print("is playingg")
+            self.timer.stop()
+            self.timerupdate.stop()
         else:
             print("is stopped")
             self.showTime()
             self.timer.start()
+            self.timerupdate.start()
             # self.playBtn.setIcon(
             #     self.style().standardIcon(QStyle.SP_MediaPlay)
             #
@@ -1485,6 +1517,8 @@ class MainWindow(QMainWindow):
             self.player.setVolume(20)
         if not self.started:
             self.started = 1
+            self.timer.stop()
+            self.timerupdate.stop()
             # CHECK IF FILE EXIST
             if check_if_existe(azan_mp3):
                 full_file_path = os.path.join(os.getcwd(), azan_mp3)
@@ -1527,8 +1561,8 @@ class MainWindow(QMainWindow):
         MONURL2_old = "http://www.prayertimes.org/morocco"
         # url = MONURL2_old + "/" + self.city + "/"
         print(self.city)
-        URL = "https://www.prayertimes.org/morocco/"+str(self.city)+"/"
-        print("url: ",URL)
+        URL = "https://www.prayertimes.org/morocco/" + str(self.city) + "/"
+        print("url: ", URL)
         if self.mode == "Online":
             try:
                 # defining a params dict for the parameters to be sent to the API
@@ -1560,8 +1594,8 @@ class MainWindow(QMainWindow):
                 print("Exception: ", e)
         else:
             # set title manuallty transtalte french to arabic
-            if self.city =="mohammedia":
-                city_AR =  "المحمدية"
+            if self.city == "mohammedia":
+                city_AR = "المحمدية"
             if self.city == "casablanca":
                 city_AR = "الدار البيضاء"
             title = '''  مواقيت الصلاة في  {} المغرب 
@@ -1580,7 +1614,7 @@ class MainWindow(QMainWindow):
                     print("Failed to get horaires data from the server")
                     mode = "Offline"
                 else:
-                    mode="Online"
+                    mode = "Online"
                     soup = BeautifulSoup(r.content, 'html.parser')
                     # Print the extracted data
                     for data in soup(['style', 'script']):
@@ -1618,7 +1652,7 @@ class MainWindow(QMainWindow):
             except Exception as e:
                 print("Exception: ", e)
 
-        if mode =="Offline":
+        if mode == "Offline":
             # get from database
             print("Mode Offline")
             # definir la période en se basant sur l'heure
@@ -1703,6 +1737,8 @@ class MainWindow(QMainWindow):
                     if gb_heure_dhuhr == heure_actuel:
                         if self.debug: print("c'est l'heure dhuhr")
                         self.LIB_DT_4.setText("حان وقت الاذان")
+                        self.LIB_remining_Time.setText(gb_heure_dhuhr)
+                        self.LIB_DT_2.setText("Dhuhr")
                         self.playAudioFile()
                     else:
                         bheure_dhuhr = parser.parse(gb_heure_dhuhr)
@@ -1724,6 +1760,8 @@ class MainWindow(QMainWindow):
                     if gb_heure_asr == heure_actuel:
                         print("c'est l'heure asr")
                         self.LIB_DT_4.setText("حان وقت الاذان")
+                        self.LIB_remining_Time.setText(gb_heure_dhuhr)
+                        self.LIB_DT_2.setText("Asr")
                         self.playAudioFile()
                     else:
                         # calcul difference to asr
@@ -1745,7 +1783,10 @@ class MainWindow(QMainWindow):
                     if gb_heure_maghrib == heure_actuel:
                         if self.debug: print("c'est l'heure maghrib")
                         self.LIB_DT_4.setText("حان وقت الاذان")
+                        self.LIB_remining_Time.setText(gb_heure_maghrib)
+                        self.LIB_DT_2.setText("Maghrib")
                         self.playAudioFile()
+
                     else:
                         bheure_maghrib = parser.parse(gb_heure_maghrib)
                         lheure_maghrib = bheure_maghrib.strftime("%H:%M:%S")
@@ -1767,6 +1808,8 @@ class MainWindow(QMainWindow):
                     if gb_heure_ishae == heure_actuel:
                         if self.debug: print("c'est l'heure ishae")
                         self.LIB_DT_4.setText("حان وقت الاذان")
+                        self.LIB_remining_Time.setText(gb_heure_ishae)
+                        self.LIB_DT_2.setText("Isha")
                         self.playAudioFile()
                     else:
                         bheure_ishae = parser.parse(gb_heure_ishae)
@@ -1800,6 +1843,8 @@ class MainWindow(QMainWindow):
                     if new_gb_heure_fajr == heure_actuel:
                         if self.debug: print("c'est l'heure el fajr")
                         self.LIB_DT_4.setText("حان وقت الاذان")
+                        self.LIB_remining_Time.setText(new_gb_heure_fajr)
+                        self.LIB_DT_2.setText("Fajr")
                         self.playAudioFile()
                     else:
                         # calcul difference en heure entre les deux date
@@ -1811,6 +1856,7 @@ class MainWindow(QMainWindow):
                         print("Temps_Restant>> ", res)
                         Temps_Restant = str(res).zfill(8)
                         self.LIB_remining_Time.setText(Temps_Restant)
+
 
 if __name__ == "__main__":
     config = configparser.ConfigParser()
