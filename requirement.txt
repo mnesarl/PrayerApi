@@ -1,0 +1,4 @@
+Pyqt5
+bs4
+requests
+openpyxl
