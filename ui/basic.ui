@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <author>MNE</author>
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1366</width>
+    <height>768</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1366</width>
+    <height>768</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1366</width>
+    <height>768</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>26</pointsize>
+   </font>
+  </property>
+  <property name="cursor">
+   <cursorShape>BlankCursor</cursorShape>
+  </property>
+  <property name="windowTitle">
+   <string>Priere</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../../../Downloads/prayertime/icon.ico</normaloff>../../../Downloads/prayertime/icon.ico</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-image: url(DSC_0001.jpg);
+ background-repeat: no-repeat;
+ background-position: center;</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="LIB_INFO">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>40</y>
+      <width>911</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Montserrat Black</family>
+      <pointsize>24</pointsize>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>BlankCursor</cursorShape>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::RightToLeft</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 35 px;
+color:green;
+text-align: right;
+position: absolute;
+top: 8px;
+right: 16px;</string>
+    </property>
+    <property name="text">
+     <string>  مواقيت الصلاة وموعد الأذان في  الدار البيضاء المغرب 
+اليوم. الأوقات الرسمية للصلاة.</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignHCenter|Qt::AlignTop</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="LIB_TIPS">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>220</y>
+      <width>1271</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>23</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>BlankCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:yellow;
+background-color:rgb(58,78,19);</string>
+    </property>
+    <property name="text">
+     <string>   قال سبحانه: (وَالَّذِينَ هُمْ عَلَى صَلاتِهِمْ يُحَافِظُونَ  أُوْلَئِكَ فِي جَنَّاتٍ مُكْرَمُونَ) [المعارج]
+</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="LIB_DT">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>20</y>
+      <width>641</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>21</pointsize>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>BlankCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:rgb(0,72,90);</string>
+    </property>
+    <property name="text">
+     <string>Samedi 21 1444 / 14 janvier 2023</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_isha">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>520</y>
+      <width>24</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>BlankCursor</cursorShape>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../../../Downloads/prayertime/isha.svg</pixmap>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_maghrib">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>520</y>
+      <width>24</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../../../Downloads/prayertime/maghrib.svg</pixmap>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_asr">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>520</y>
+      <width>24</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../../../Downloads/prayertime/asr.svg</pixmap>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_dhuhr">
+    <property name="geometry">
+     <rect>
+      <x>920</x>
+      <y>520</y>
+      <width>24</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../../../Downloads/prayertime/dhuhr.svg</pixmap>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_fajr">
+    <property name="geometry">
+     <rect>
+      <x>1170</x>
+      <y>520</y>
+      <width>24</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../../../Downloads/prayertime/fajr.svg</pixmap>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="LIB_DT_2">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>80</y>
+      <width>141</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>MS Shell Dlg 2</family>
+      <pointsize>21</pointsize>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>BlankCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(0,72,90);
+color:white;
+border:1px;</string>
+    </property>
+    <property name="text">
+     <string>Fajr</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="LIB_remining_Time">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>80</y>
+      <width>110</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>MS Shell Dlg 2</family>
+      <pointsize>21</pointsize>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>BlankCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(0,72,90);
+color:white;
+border:1px;</string>
+    </property>
+    <property name="text">
+     <string>20:11:40</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="LIB_DT_4">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>80</y>
+      <width>181</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>MS Shell Dlg 2</family>
+      <pointsize>21</pointsize>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>BlankCursor</cursorShape>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::RightToLeft</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(0,72,90);
+color:white;
+border:1px;</string>
+    </property>
+    <property name="text">
+     <string>الوقت المتبقي</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>43</x>
+      <y>510</y>
+      <width>1271</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QLabel" name="LIB_heure_ishae">
+       <property name="font">
+        <font>
+         <pointsize>34</pointsize>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>BlankCursor</cursorShape>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color:rgb(63,63,97);
+color:white;</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::WinPanel</enum>
+       </property>
+       <property name="text">
+        <string>20:11 PM</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="LIB_heure_maghrib">
+       <property name="font">
+        <font>
+         <pointsize>34</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color:rgb(87,57,49);
+color:white;</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::WinPanel</enum>
+       </property>
+       <property name="text">
+        <string>18:54 PM</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="LIB_heure_asr">
+       <property name="font">
+        <font>
+         <pointsize>34</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color:rgb(58,78,19);
+color:white;</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::WinPanel</enum>
+       </property>
+       <property name="text">
+        <string>16:30 PM</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="LIB_heure_dhuhr">
+       <property name="font">
+        <font>
+         <pointsize>34</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color:rgb(84,72,24);
+color:white;</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::WinPanel</enum>
+       </property>
+       <property name="text">
+        <string>13:46 PM</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="LIB_heure_fajr">
+       <property name="maximumSize">
+        <size>
+         <width>249</width>
+         <height>139</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>34</pointsize>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>SplitVCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color:rgb(0,72,90);
+color:white;</string>
+       </property>
+       <property name="inputMethodHints">
+        <set>Qt::ImhTime</set>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::WinPanel</enum>
+       </property>
+       <property name="text">
+        <string>07:01 PM</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="textInteractionFlags">
+        <set>Qt::NoTextInteraction</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QLabel" name="LB_3">
+    <property name="geometry">
+     <rect>
+      <x>555</x>
+      <y>400</y>
+      <width>241</width>
+      <height>68</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>40</pointsize>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>BlankCursor</cursorShape>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:white;
+background-color:rgb(58,78,19);</string>
+    </property>
+    <property name="text">
+     <string>العصر</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="LB_2">
+    <property name="geometry">
+     <rect>
+      <x>815</x>
+      <y>400</y>
+      <width>241</width>
+      <height>68</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>40</pointsize>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>BlankCursor</cursorShape>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:white;
+background-color:rgb(84,72,24);</string>
+    </property>
+    <property name="text">
+     <string>الظهر</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="LB_1">
+    <property name="geometry">
+     <rect>
+      <x>1070</x>
+      <y>400</y>
+      <width>241</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>40</pointsize>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>BlankCursor</cursorShape>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:white;
+background-color:rgb(0,72,90);</string>
+    </property>
+    <property name="text">
+     <string> الفجر</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="LB_8">
+    <property name="geometry">
+     <rect>
+      <x>43</x>
+      <y>400</y>
+      <width>251</width>
+      <height>64</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>40</pointsize>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>BlankCursor</cursorShape>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:white;
+background-color:rgb(63,63,97);</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::NoFrame</enum>
+    </property>
+    <property name="text">
+     <string>العشاء</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="LB_7">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>400</y>
+      <width>231</width>
+      <height>64</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>40</pointsize>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>BlankCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:white;
+background-color:rgb(87,57,49);</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::NoFrame</enum>
+    </property>
+    <property name="text">
+     <string> المغرب</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <zorder>layoutWidget</zorder>
+   <zorder>LB_3</zorder>
+   <zorder>LB_2</zorder>
+   <zorder>LB_1</zorder>
+   <zorder>LB_8</zorder>
+   <zorder>LB_7</zorder>
+   <zorder>LIB_INFO</zorder>
+   <zorder>LIB_DT_2</zorder>
+   <zorder>LIB_remining_Time</zorder>
+   <zorder>LIB_DT_4</zorder>
+   <zorder>LIB_DT</zorder>
+   <zorder>LIB_TIPS</zorder>
+   <zorder>label_fajr</zorder>
+   <zorder>label_dhuhr</zorder>
+   <zorder>label_asr</zorder>
+   <zorder>label_maghrib</zorder>
+   <zorder>label_isha</zorder>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1366</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuParametrages">
+    <property name="title">
+     <string>Menu</string>
+    </property>
+    <addaction name="actionParametrages"/>
+    <addaction name="actionHoraires"/>
+    <addaction name="actionrefresh"/>
+   </widget>
+   <addaction name="menuParametrages"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionParametrages">
+   <property name="icon">
+    <iconset>
+     <normaloff>../png/1431359280_ic_list_48px-24.png</normaloff>../png/1431359280_ic_list_48px-24.png</iconset>
+   </property>
+   <property name="text">
+    <string>Parametrages</string>
+   </property>
+  </action>
+  <action name="actionHoraires">
+   <property name="icon">
+    <iconset>
+     <normaloff>../../../Downloads/prayertime/date.png</normaloff>../../../Downloads/prayertime/date.png</iconset>
+   </property>
+   <property name="text">
+    <string>Horaires</string>
+   </property>
+  </action>
+  <action name="actionrefresh">
+   <property name="icon">
+    <iconset>
+     <normaloff>../png/actualiser.png</normaloff>../png/actualiser.png</iconset>
+   </property>
+   <property name="text">
+    <string>refresh</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+ <designerdata>
+  <property name="gridDeltaX">
+   <number>10</number>
+  </property>
+  <property name="gridDeltaY">
+   <number>10</number>
+  </property>
+  <property name="gridSnapX">
+   <bool>true</bool>
+  </property>
+  <property name="gridSnapY">
+   <bool>true</bool>
+  </property>
+  <property name="gridVisible">
+   <bool>true</bool>
+  </property>
+ </designerdata>
+</ui>

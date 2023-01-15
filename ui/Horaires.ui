@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>953</width>
+    <height>599</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Horaires</string>
+  </property>
+  <widget class="QTableWidget" name="tableWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>20</y>
+     <width>941</width>
+     <height>531</height>
+    </rect>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>16777215</width>
+     <height>16777215</height>
+    </size>
+   </property>
+   <property name="cursor" stdset="0">
+    <cursorShape>ArrowCursor</cursorShape>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="autoFillBackground">
+    <bool>true</bool>
+   </property>
+   <property name="inputMethodHints">
+    <set>Qt::ImhNoEditMenu</set>
+   </property>
+   <property name="editTriggers">
+    <set>QAbstractItemView::NoEditTriggers</set>
+   </property>
+   <row>
+    <property name="text">
+     <string>1</string>
+    </property>
+   </row>
+   <column>
+    <property name="text">
+     <string>الأيام</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>جمادى الآخرة</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>ديسمبر / يناير</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>الصبح</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>الشروق</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>الظهر</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>العصر</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>المغرب</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>العشاء</string>
+    </property>
+   </column>
+   <item row="0" column="0">
+    <property name="text">
+     <string>الأحد</string>
+    </property>
+   </item>
+   <item row="0" column="1">
+    <property name="text">
+     <string>1</string>
+    </property>
+   </item>
+   <item row="0" column="2">
+    <property name="text">
+     <string>25</string>
+    </property>
+   </item>
+   <item row="0" column="3">
+    <property name="text">
+     <string>06:58</string>
+    </property>
+   </item>
+   <item row="0" column="4">
+    <property name="text">
+     <string>08:29</string>
+    </property>
+   </item>
+   <item row="0" column="5">
+    <property name="text">
+     <string>13:36</string>
+    </property>
+   </item>
+   <item row="0" column="6">
+    <property name="text">
+     <string>16:11</string>
+    </property>
+   </item>
+   <item row="0" column="7">
+    <property name="text">
+     <string>18:33</string>
+    </property>
+   </item>
+   <item row="0" column="8">
+    <property name="text">
+     <string>19:53</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QPushButton" name="browse">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>560</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Importer</string>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>excel1.png</normaloff>excel1.png</iconset>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>browse</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>49</x>
+     <y>572</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>366</x>
+     <y>242</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>browse</sender>
+   <signal>clicked()</signal>
+   <receiver>tableWidget</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>62</x>
+     <y>571</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>266</x>
+     <y>478</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <signal>browsefiles()</signal>
+ </slots>
+</ui>

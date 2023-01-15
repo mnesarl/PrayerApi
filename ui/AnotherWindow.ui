@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AnotherWindow</class>
+ <widget class="QWidget" name="AnotherWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1024</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1024</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QTableWidget" name="tableWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1021</width>
+     <height>531</height>
+    </rect>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>1021</width>
+     <height>531</height>
+    </size>
+   </property>
+   <property name="cursor" stdset="0">
+    <cursorShape>ArrowCursor</cursorShape>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="autoFillBackground">
+    <bool>true</bool>
+   </property>
+   <property name="inputMethodHints">
+    <set>Qt::ImhNoEditMenu</set>
+   </property>
+   <property name="editTriggers">
+    <set>QAbstractItemView::NoEditTriggers</set>
+   </property>
+   <column>
+    <property name="text">
+     <string>التاريخ</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>الأيام</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>جمادى الآخرة</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>ديسمبر / يناير</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>الصبح</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>الشروق</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>الظهر</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>العصر</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>المغرب</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>العشاء</string>
+    </property>
+   </column>
+  </widget>
+  <widget class="QPushButton" name="browse">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>540</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Importer</string>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../png/excel1.png</normaloff>../png/excel1.png</iconset>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="supprimer">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>540</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Reset</string>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../png/del4.png</normaloff>../png/del4.png</iconset>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_supprimer">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>540</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>supprimer</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_Valider">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>540</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Valider</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_Annuler">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>540</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Annuler</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
