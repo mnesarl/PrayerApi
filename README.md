@@ -1,6 +1,9 @@
 # PrayerApi
 مواقيت الصلاة وموعد الأذان في المغرب . الأوقات الرسمية للصلاة.
-Les Horaires Officiel Priere en maroc
+------------------------------------------------------------------------
+Les Horaires Officiel des prières au Royaume du Maroc
+------------------------------------------------------------------------
+
 Mode Online et hors Ligne
 Importation Les Horaires depuis Fichier excel
 Parametrages Application:
